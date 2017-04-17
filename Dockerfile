@@ -1,5 +1,8 @@
 FROM ruby:2.3.3
 
+# Setting HOME
+ENV HOME=/tmp
+
 # updating apt-get
 RUN apt-get -y update
 
@@ -19,13 +22,12 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
 # copying files to tmp
-WORKDIR /tmp
-ADD Gemfile.lock /tmp
-ADD Gemfile /tmp
-ADD install_phantomjs.sh /tmp
+# WORKDIR /tmp
+# ADD Gemfile /tmp
 
 # installing gems
-RUN bundle install -j4
+# RUN bundle install -j4
 
 # installing phantomjs
-RUN sh install_phantomjs.sh
+# ADD install_phantomjs.sh /tmp
+# RUN sh install_phantomjs.sh
