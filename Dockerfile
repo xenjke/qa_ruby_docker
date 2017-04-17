@@ -1,8 +1,5 @@
 FROM ruby:2.3.3
 
-# Setting HOME
-ENV HOME=/tmp
-
 # updating apt-get
 RUN apt-get -y update
 
